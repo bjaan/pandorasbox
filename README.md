@@ -2,7 +2,7 @@
 
 A Pandora Player remote control application that allows control via a Web Browser.
 
-It sends commands (keypresses through a fifo-command file) in an [ExpressJS](https://expressjs.com/) Node.js web application to control a local instance of [Pianobar](https://github.com/PromyLOPh/pianobar) that is playing music from Pandora.com, while it displays the cover art of the currently playing song.
+It sends commands (keypresses through a fifo-command file) in an [ExpressJS](https://expressjs.com/) Node.js web application to control a local instance of [Pianobar](https://github.com/PromyLOPh/pianobar) that is playing music from Pandora.com, while it displays the title information and cover art of the currently playing song.
 
 Intended to be used on Raspian for the Raspberry Pi
 
