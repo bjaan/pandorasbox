@@ -4,7 +4,7 @@ A Pandora Player remote control application that allows control via a Web Browse
 
 It sends commands over an [Express](https://expressjs.com/) Node.js web application to control a local instance of [Pianobar](https://github.com/PromyLOPh/pianobar), and displays the cover art of the currently playing song.
 
-Indended to be used on Raspian for the Raspberry Pi.
+Indended to be used on Raspian for the Raspberry Pi
 
 ![pandorasbox - playing a song in the web browser](https://raw.githubusercontent.com/bjaan/pandorasbox/main/pandorasbox-playing.png)
 ![pandorasbox - showing the available channels on Pandora.com which can be switched to](https://raw.githubusercontent.com/bjaan/pandorasbox/main/pandorasbox-channellist.png)
@@ -15,9 +15,9 @@ Once configured:
 
 * Automatically starts with the Raspberry Pi and starts playing music
 * You can navigate to the local port 8888 on the Raspberry Pi, the link will look like http://pandorasbox.local:8888
-* The currenly playing song title, artist, and album is shown with the cover art is shown, and is updated seconds after starting the next song
-* Pause, like, skip songs
-* Create new stations based of an artist / keyword, or change to, or delete them.
+* The currently playing song title, artist, and album is shown with the cover art is shown, and is updated seconds after starting the next song
+* Pause, like or dislike, skip songs
+* Create new stations based of an artist's style or a keyword, or switch to another one, or delete a channel.
 
 # Required software
 
