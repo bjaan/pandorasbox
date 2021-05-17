@@ -2,7 +2,7 @@
 
 A Pandora Player remote control application that allows control via a Web Browser.
 
-It sends commands over an [Express](https://expressjs.com/) Node.js web application to control a local instance of [Pianobar](https://github.com/PromyLOPh/pianobar), and displays the cover art of the currently playing song.
+It sends commands (keypresses through a fifo-command file) in an [ExpressJS](https://expressjs.com/) Node.js web application to control a local instance of [Pianobar](https://github.com/PromyLOPh/pianobar) that is playing music from Pandora.com, while it displays the cover art of the currently playing song.
 
 Intended to be used on Raspian for the Raspberry Pi
 
@@ -17,7 +17,7 @@ Once configured:
 * You can navigate to the local port 8888 on the Raspberry Pi, the link will look like http://pandorasbox.local:8888
 * The currently playing song title, artist, and album is shown with the cover art is shown, and is updated seconds after starting the next song
 * Pause, like or dislike, skip songs
-* Create new stations based of an artist's style or a keyword, or switch to another one, or delete a channel.
+* Create new stations based of an artist's style or a keyword, or switch to another station, or delete a station.
 
 # Required software
 
@@ -50,7 +50,7 @@ WantedBy=multi-user.target
 
 * Pianobar configuration file at `/home/pi/.config/pianobar`
 
-set `autostart_station = 123456` to an existing station id on your Pandora.com account, when you want the music to play automatically
+set `autostart_station = 123456` to an existing station id on your Pandora.com account, when you want the music to play automatically from something else as than the QuickMix channel
 
 ```sh
 # This is an example configuration file for pianobar. You may remove the # from
