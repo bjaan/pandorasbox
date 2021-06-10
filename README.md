@@ -22,8 +22,8 @@ Once configured:
 # Required software
 
 * Raspbian GNU/Linux 10 (buster) - I installed a new Raspberry Pi image with the `ampi` hostname and connected it to the Internet
-* Node.js 10.x for running the service - installed from the Raspbian repository using `sudo apt-get install npm nodejs`
-* Pianobar - installed from the Raspbian repository using `sudo apt-get install pianobar`, and set-up the service, see below
+* Node.js for running the service - installed using these [instructions](https://www.instructables.com/Install-Nodejs-and-Npm-on-Raspberry-Pi/)
+* Pianobar - for Playing from Pandora.com, installed from the Raspbian repository using `sudo apt-get install pianobar`, and set-up the service, see below
 * Python - already installed on the Raspbian by default (needed for the `eventcmd.py` used by Pianobar)
 
 # Configuration changes
@@ -38,6 +38,26 @@ After=network.target
 [Service]
 ExecStartPre=/bin/sleep 30
 ExecStart=/usr/bin/pianobar
+WorkingDirectory=/home/pi
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+```
+
+* Pandorasbox service file `/etc/systemd/system/pianobar.service` to set-up a service for Pianobar, called `pianobar` - and installed the service following these [instructions](https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/)
+
+```ini
+[Unit]
+Description=pianobar
+After=network.target openvpn.service
+#Requires=pianobar.service
+
+[Service]
+ExecStart=node /home/pi/pandorasbox/bin/www
 WorkingDirectory=/home/pi
 StandardOutput=inherit
 StandardError=inherit
