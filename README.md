@@ -48,11 +48,11 @@ User=pi
 WantedBy=multi-user.target
 ```
 
-* Pandorasbox service file `/etc/systemd/system/pianobar.service` to set-up a service for Pianobar, called `pianobar` - and installed the service following these [instructions](https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/)
+* Pandorasbox service file `/etc/systemd/system/pandorasbox.service` to set-up a service for Pianobar, called `pandorasbox` - and installed the service following these [instructions](https://www.shubhamdipt.com/blog/how-to-create-a-systemd-service-in-linux/)
 
 ```ini
 [Unit]
-Description=pianobar
+Description=pandorasbox
 After=network.target openvpn.service
 #Requires=pianobar.service
 
